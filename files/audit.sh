@@ -1,0 +1,1 @@
+export PROMPT_COMMAND='{ date "+%Y-%m-%d %T $(ifconfig | grep eth -A 1 | grep "192.168" | grep -oP "(?<=addr:)[\d\.]+") $(who am i |awk "{print \$1\" \"\$2\" \"\$3\" \"\$4\" \"\$5}") [`pwd`] $(history 1 | { read x cmd; echo "$cmd"; })"; } >> /var/log/audit.log'
